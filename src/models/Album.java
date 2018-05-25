@@ -11,8 +11,32 @@ package models;
  */
 public class Album {
 
-   private Page head;
+   private Page[] pages;
    private boolean fill;
+
+    public Album() {
+        this.pages = new Page[10];
+        for (int i = 0; i < 10; i++) {
+            pages[i]= new Page(i+1);
+        }
+        this.fill = false;
+    }
+
+    public Page[] getPages() {
+        return pages;
+    }
+
+    public void setPages(Page[] pages) {
+        this.pages = pages;
+    }
+
+    public boolean isFill() {
+        return fill;
+    }
+
+    public void setFill(boolean fill) {
+        this.fill = fill;
+    }
     
     
 }

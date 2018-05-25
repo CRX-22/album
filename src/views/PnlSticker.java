@@ -19,10 +19,19 @@ public class PnlSticker extends JPanel{
     public JLabel lbNumber;
     private Color color;
 
-    public PnlSticker() {
-        this.lbNumber = new JLabel("a"/*String.valueOf(sticker.getNumber())*/);
+    public PnlSticker(Sticker sticker) {
+        this.sticker = sticker;
+        this.lbNumber = new JLabel(String.valueOf(sticker.getNumber()));
         this.setBackground(Color.gray);
         this.add(lbNumber);
+    }
+
+    public Sticker getSticker() {
+        return sticker;
+    }
+
+    public void setSticker(Sticker sticker) {
+        this.sticker = sticker;
     }
 
     

@@ -18,6 +18,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import models.Album;
 
 /**
  *
@@ -34,15 +35,19 @@ public class Window extends JFrame{
     public JPanel tittle;
     public JLabel jLabel;
     public JPanel pnlsim;
+    private Album album;
+    private Splash splash;
 
-    public Window(ActionListener listener) {
-        super("ALBUM SIMULATOR");
+    public Window(ActionListener listener, Album album) {
+         super("ALBUM SIMULATOR");
+          splash = new Splash();
+        this.album = album; 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         this.setExtendedState(MAXIMIZED_BOTH);
        	this.setIconImage(new ImageIcon(getClass().getResource("/IMG/album.png")).getImage());
         pnlGroupPack = new PnlGroupPack();
-        pnlAlbum = new PnlAlbum();
+        pnlAlbum = new PnlAlbum(album);
         pnlRepeated =new PnlRepeated();
         dlgInit = new DlgInit(listener);
         btnStart = new JButton("comenzar");

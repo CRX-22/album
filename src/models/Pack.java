@@ -12,20 +12,34 @@ import java.util.ArrayList;
  * @author Dell
  */
 public class Pack {
-    private ArrayList<Sticker> stickers;
+    private Sticker[] stickers;
     private int y;
+    private Pack next;
 
-    public Pack(ArrayList<Sticker> stickers) {
-        this.stickers = stickers;
+    public Pack() {
+        this.stickers = new Sticker[5];
+        for (int i = 0; i < 5; i++) {
+            stickers[i] = new Sticker((int) (Math.random()*100));
+        }
     }
 
-    public ArrayList<Sticker> getStickers() {
+    public Sticker[] getStickers() {
         return stickers;
     }
 
-    public void setStickers(ArrayList<Sticker> stickers) {
+    public void setStickers(Sticker[] stickers) {
         this.stickers = stickers;
     }
+
+    public Pack getNext() {
+        return next;
+    }
+
+    public void setNext(Pack next) {
+        this.next = next;
+    }
+
+    
 
     public int getY() {
 		return y;

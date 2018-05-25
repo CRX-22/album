@@ -11,13 +11,11 @@ package models;
  */
 public class Sticker {
     private int number;
-    private String information;
     private Sticker next;
     private int y;
 
-    public Sticker(int number, String information) {
+    public Sticker(int number) {
         this.number = number;
-        this.information = information;
     }
 
     public int getNumber() {
@@ -28,14 +26,7 @@ public class Sticker {
         this.number = number;
     }
 
-    public String getInformation() {
-        return information;
-    }
-
-    public void setInformation(String information) {
-        this.information = information;
-    }
-
+ 
     public Sticker getNext() {
         return next;
     }

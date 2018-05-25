@@ -27,9 +27,7 @@ public class PnlGroupPack extends JPanel{
         this.add(jLabel, BorderLayout.SOUTH);
     }
 
-    public void draw(){
-            
-    }
+    
     
     
 }
